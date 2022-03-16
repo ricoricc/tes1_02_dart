@@ -1,9 +1,7 @@
 import 'dart:io';
-//import 'dart:web_gl';
 import 'fbuku.dart';
 import 'fcd.dart';
 import 'fproduct.dart';
-import 'fcd.dart';
 
 void main(List<String> arguments) {
   int inp = -1;
@@ -103,7 +101,8 @@ void main(List<String> arguments) {
       stdout.write("Pilih Tipe Produk: ");
       String? dnpData = stdin.readLineSync();
       dnp = int.parse(dnpData!);
-      stdout.write("Masukan Lokasi Barang yang ingin di letakan (int dr 0): ");
+      stdout.write(
+          "Masukan Lokasi Barang yang ingin di letakan (min 0, max ${products.length}): ");
       String? locbrgData = stdin.readLineSync();
       int locbrg = int.parse(locbrgData!);
       if (dnp == 1) {

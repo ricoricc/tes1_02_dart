@@ -21,11 +21,6 @@ class Book extends Product implements Ext {
     print("ISBN: $isbn");
     print("Author: $author");
   }
-
-  @override
-  void getLoc() {
-    // TODO: implement getLoc
-  }
 }
 
 class TravelGuide extends Book implements Ext {
