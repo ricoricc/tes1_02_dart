@@ -1,19 +1,19 @@
-class Product {
+import 'productExtention.dart';
+
+abstract class Product implements Ext {
   String _obj = '-';
-  int _id = 0;
+  String _id = '-';
   String _title = '-';
   String _desc = '-';
   int _price = 0;
-  String _location = '-';
 
-  Product(this._obj, this._id, this._title, this._desc, this._price,
-      this._location);
+  Product(this._obj, this._id, this._title, this._desc, this._price);
 
   set obj(String n) {
     _obj = n;
   }
 
-  set id(int n) {
+  set id(String n) {
     _id = n;
   }
 
@@ -29,14 +29,12 @@ class Product {
     _price = n;
   }
 
-  set location(String n) {
-    _location = n;
-  }
+  String get obj => this._obj;
+  String get id => this._id;
+  String get title => this._title;
+  String get desc => this._desc;
+  int get price => this._price;
 
-  String get obj => this._obj!;
-  int get id => this._id!;
-  String get title => this._title!;
-  String get desc => this._desc!;
-  int get price => this._price!;
-  String get location => this._location!;
+  @override
+  void show() {}
 }

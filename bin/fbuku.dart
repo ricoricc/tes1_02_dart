@@ -1,23 +1,50 @@
 import 'fproduct.dart';
+import 'productExtention.dart';
 
-class Buku extends Product {
+class Book extends Product implements Ext {
   int isbn = 0;
   String author = '-';
 
-  Buku(String obj, int id, String title, String desc, int price,
-      String location, int isbn, String author)
-      : super(obj, id, title, desc, price, location) {
+  Book(String obj, String id, String title, String desc, int price, int isbn,
+      String author)
+      : super(obj, id, title, desc, price) {
     this.isbn = isbn;
     this.author = author;
   }
+
+  @override
+  void show() {
+    print("Id: $id");
+    print("Title: $title");
+    print("Description: $desc");
+    print("Price: \$$price");
+    print("ISBN: $isbn");
+    print("Author: $author");
+  }
+
+  @override
+  void getLoc() {
+    // TODO: implement getLoc
+  }
 }
 
-class TravelGuide extends Buku {
+class TravelGuide extends Book implements Ext {
   String country = '-';
 
-  TravelGuide(String obj, int id, String title, String desc, String location,
-      int price, int isbn, String author, String country)
-      : super(obj, id, title, desc, price, location, isbn, author) {
+  TravelGuide(String obj, String id, String title, String desc, int price,
+      int isbn, String author, String country)
+      : super(obj, id, title, desc, price, isbn, author) {
     this.country = country;
+  }
+
+  @override
+  void show() {
+    print("Id: $id");
+    print("Title: $title");
+    print("Description: $desc");
+    print("Price: \$$price");
+    print("ISBN: $isbn");
+    print("Author: $author");
+    print("Country: $country");
   }
 }
