@@ -90,8 +90,9 @@ void main(List<String> arguments) {
           "Masukan barang ke N yang ingin di tampilkan (min 0, max ${products.length}): ");
       String? inpData = stdin.readLineSync();
       int o = int.parse(inpData!);
-      print("Barang ke -$o: ");
-      products[0].show();
+      print("Barang ke-$o: ");
+      print("Object: ${products[o].obj} ");
+      products[o].show();
     } else if (inp == 3) {
       print("Masukan Barang yang ingin di letakan: ");
       int dnp;
@@ -175,6 +176,7 @@ void main(List<String> arguments) {
         print("Barang ke-$i: ");
         print("Object: ${products[i].obj} ");
         products[i].show();
+        print("");
       }
     } else if (inp == 5) {
       stdout.write("N-data barang pertama: ");
@@ -198,6 +200,7 @@ void main(List<String> arguments) {
         N--;
       }
     } else if (inp == 6) {
+      int c = 0;
       stdout.write("Masukan judul yang ingin dicari: ");
       String? title = stdin.readLineSync();
       for (int i = 0; i < products.length; i++) {
@@ -205,7 +208,11 @@ void main(List<String> arguments) {
           print("Barang ke-$i: ");
           print("Object: ${products[i].obj} ");
           products[i].show();
+          c = 1;
         }
+      }
+      if (c == 0) {
+        print("Barang dengan judul $title, tidak ditemukan.");
       }
     }
   }
